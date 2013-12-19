@@ -22,7 +22,7 @@ function trial_membership_after_change_membership_level($level_id, $user_id)
 		update_user_meta($user_id, "pmpro_trial_level_used", "1");
 	}	
 }
-add_action("trial_membership_after_change_membership_level", "trial_membership_after_change_membership_level", 10, 2);
+add_action("trial_membership_after_change_membership_level", "my_trial_membership_after_change_membership_level", 10, 2);
  
 //check at checkout if the user has used the trial level already
 function my_pmpro_registration_checks($value)
