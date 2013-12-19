@@ -30,7 +30,7 @@ function my_pmpro_registration_checks($value)
 	global $current_user;
  
 	//set this to the id of your trial level
-	$trial_level_id = 8;
+	$trial_level_id = 4;
  
 	if($current_user->ID && intval($_REQUEST['level']) == $trial_level_id)
 	{
@@ -58,7 +58,7 @@ function my_pmpro_level_expiration_text($text, $level)
 	global $current_user;
  
 	//set this to the id of your trial level
-	$trial_level_id = 8;
+	$trial_level_id = 4;
  
 	if($current_user->ID && $level->id == $trial_level_id)
 	{
