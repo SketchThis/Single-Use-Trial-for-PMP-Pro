@@ -3,7 +3,7 @@
 Plugin Name: Trial Only Once
 Plugin URI: http://www.sketchthis.net
 Description: Allow users to have a trial only once
-Version: .1
+Version: .2
 Author: Eric
 Author URI: http://www.sketchthis.net
 */
