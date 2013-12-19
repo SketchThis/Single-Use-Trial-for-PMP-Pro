@@ -1,3 +1,12 @@
+<?php
+/*
+Plugin Name: Trial Only Once
+Plugin URI: http://www.sketchthis.net
+Description: Allow users to have a trial only once
+Version: .1
+Author: Eric
+Author URI: http://www.sketchthis.net
+*/
 /*
 	Only allow users to use the trial level once.
 */
