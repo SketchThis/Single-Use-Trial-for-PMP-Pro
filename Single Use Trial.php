@@ -5,7 +5,7 @@
 function my_pmpro_after_change_membership_level($level_id, $user_id)
 {
 	//set this to the id of your trial level
-	$trial_level_id = 8;
+	$trial_level_id = 4;
  
 	if($level_id == $trial_level_id)
 	{	
