@@ -1,11 +1,20 @@
+<?php
+/*
+Plugin Name: Trial Only Once
+Plugin URI: http://www.sketchthis.net
+Description: Allow users to have a trial only once
+Version: .4
+Author: Eric
+Author URI: http://www.sketchthis.net
+*/
 /*
 	Only allow users to use the trial level once.
 */
 //record when users gain the trial level
-function my_pmpro_after_change_membership_level($level_id, $user_id)
+function trial_membership_after_change_membership_level($level_id, $user_id)
 {
 	//set this to the id of your trial level
-	$trial_level_id = 8;
+	$trial_level_id = 4;
  
 	if($level_id == $trial_level_id)
 	{	
@@ -13,7 +22,7 @@ function my_pmpro_after_change_membership_level($level_id, $user_id)
 		update_user_meta($user_id, "pmpro_trial_level_used", "1");
 	}	
 }
-add_action("pmpro_after_change_membership_level", "my_pmpro_after_change_membership_level", 10, 2);
+add_action( 'pmpro_after_change_membership_level', 'trial_membership_after_change_membership_level', 10, 2 );
  
 //check at checkout if the user has used the trial level already
 function my_pmpro_registration_checks($value)
@@ -21,7 +30,7 @@ function my_pmpro_registration_checks($value)
 	global $current_user;
  
 	//set this to the id of your trial level
-	$trial_level_id = 8;
+	$trial_level_id = 4;
  
 	if($current_user->ID && intval($_REQUEST['level']) == $trial_level_id)
 	{
@@ -49,7 +58,7 @@ function my_pmpro_level_expiration_text($text, $level)
 	global $current_user;
  
 	//set this to the id of your trial level
-	$trial_level_id = 8;
+	$trial_level_id = 4;
  
 	if($current_user->ID && $level->id == $trial_level_id)
 	{
